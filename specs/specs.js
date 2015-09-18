@@ -18,18 +18,18 @@ describe('PizzaOrder', function() {
         var testPizzaOrder = new PizzaOrder("large",2);
         expect(testPizzaOrder.quantityPrice()).to.equal(40);
     });
-
-
 });
 
 describe("PizzaTopping", function() {
     it("creates a new topping", function() {
-        var testPizzaTopping = new PizzaTopping("pineapple",0.50);
+        var testPizzaTopping = new PizzaTopping("pineapple");
         expect(testPizzaTopping.toppingType).to.equal("pineapple");
     });
 
     it("creates a new topping price", function() {
-        var testPizzaTopping = new PizzaTopping("pinapple",0.50);
-        expect(testPizzaTopping.toppingPrice).to.eql(0.50);
+        var testPizzaTopping = new PizzaTopping("pineapple");
+        expect(testPizzaTopping.toppingPrice()).to.equal(0.50);
     });
+
+//    it("creates multiple toppings and calculates price")
 });
