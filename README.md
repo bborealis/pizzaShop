@@ -10,6 +10,14 @@ A Pizza Shop app where users can order pizzas with custom  toppings.
 
 Users can specify the size and quantity of pizzas and see the total cost.
 
+## Notes
+
+Still need to work on:
+
+-Adding more then one topping to a pizza.
+
+-Adding the correct pricing for multiple pizzas with toppings.( currently if two pizzas are added it will only add topping price for one. )
+
 ## Setup
 
 _Clone and open index.html in your browser._
@@ -20,7 +28,6 @@ _To run tests open spec-runner.html in your browser._
 
 _This project makes use of
 [Mocha](https://mochajs.org/) and [Chai](http://chaijs.com/) as testing-frameworks and has a dependency for jQuery._
-
 
 ### Legal
 
