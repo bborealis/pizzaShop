@@ -24,15 +24,15 @@ PizzaOrder.prototype.quantityPrice = function() {
 }
 
 PizzaOrder.prototype.pizzaOrderDescription = function() {
-    var newOrderSingle = ("You ordered : " + this.pizzaQuantity + " " + this.pizzaSize + " pizza");
-    var newOrderMult = ("You ordered : " + this.pizzaQuantity + " " + this.pizzaSize + " pizzas");
-    if (this.pizzaQuantity === "1") {
-        return newOrderSingle;
-    } else {
-        return newOrderMult;
+        var newOrderSingle = ("You ordered : " + this.pizzaQuantity + " " + this.pizzaSize + " pizza");
+        var newOrderMult = ("You ordered : " + this.pizzaQuantity + " " + this.pizzaSize + " pizzas");
+        if (this.pizzaQuantity === "1") {
+            return newOrderSingle;
+        } else {
+            return newOrderMult;
+        }
     }
-}
-////////////////PizzaTopping Constructor\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    ////////////////PizzaTopping Constructor\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 function PizzaTopping(toppingType) {
     this.toppingType = toppingType;
 }
@@ -76,28 +76,28 @@ PizzaTopping.prototype.toppingForEachPizza = function() {
 }
 
 PizzaTopping.prototype.toppingDescription = function() {
-    var newToppingSingle = ("Toppings include: " + this.toppingType);
-    return newToppingSingle;
-}
-////////////////PizzaGrandTotal Constructor\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+        var newToppingSingle = ("Toppings include: " + this.toppingType);
+        return newToppingSingle;
+    }
+    ////////////////PizzaGrandTotal Constructor\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 function PizzaGrandTotal(pizzaOrderTotal, pizzaToppingTotal) {
     this.pizzaOrderTotal = pizzaOrderTotal;
     this.pizzaToppingTotal = pizzaToppingTotal;
 }
 ///////////////PizzaGrandTotal prototype\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 PizzaGrandTotal.prototype.totalPrice = function() {
-    if(PizzaTopping.toppingPrice === 0){
+    if (PizzaTopping.toppingPrice === 0) {
         return this.pizzaOrderTotal
     } else {
-    return this.pizzaOrderTotal + this.pizzaToppingTotal;
+        return this.pizzaOrderTotal + this.pizzaToppingTotal;
     }
 }
 
 PizzaGrandTotal.prototype.totalDescription = function() {
-    var newGrandTotal = ("Your total is: $" + this.totalPrice());
-    return newGrandTotal;
-}
-//////////////begin jQuery\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+        var newGrandTotal = ("Your total is: $" + this.totalPrice());
+        return newGrandTotal;
+    }
+    //////////////begin jQuery\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 $(document).ready(function() {
 
     $("form#new-pizza-order").submit(function(event) {
@@ -131,15 +131,15 @@ $(document).ready(function() {
         var inputtedPizzaQuantity = pizzaQuantityArray[quantitySelection];
 
         var pizzaToppingArray = {
-            none : "None",
-            pineapple : "Pineapple",
-            mushroom : "Mushroom",
-            onion : "Onion",
-            olive : "Olive",
-            tomato : "Tomato",
-            pepperoni : "Pepperoni",
-            sausage : "Sausage",
-            bbq_chicken : "BBQ Chicken"
+            none: "None",
+            pineapple: "Pineapple",
+            mushroom: "Mushroom",
+            onion: "Onion",
+            olive: "Olive",
+            tomato: "Tomato",
+            pepperoni: "Pepperoni",
+            sausage: "Sausage",
+            bbq_chicken: "BBQ Chicken"
         }
 
         var inputtedPizzaTopping = pizzaToppingArray[toppingSelection];
@@ -152,7 +152,7 @@ $(document).ready(function() {
         var calculatedPizzaToppingTotal = newPizzaTopping.toppingPrice(inputtedPizzaTopping);
         console.log("pizza topping: " + pizzaToppingArray[toppingSelection]);
         console.log("total price of toppings: " + calculatedPizzaToppingTotal);
-        var newPizzaGrandTotal = new PizzaGrandTotal(calculatedPizzaOrderTotal,calculatedPizzaToppingTotal);
+        var newPizzaGrandTotal = new PizzaGrandTotal(calculatedPizzaOrderTotal, calculatedPizzaToppingTotal);
         console.log("Total price message: " + newPizzaGrandTotal.totalDescription());
 
 
