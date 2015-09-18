@@ -52,6 +52,11 @@ PizzaTopping.prototype.toppingPrice = function() {
     }
 }
 
-// PizzaTopping.prototype.totalToppingPrice = function() {
-//
-// }
+function PizzaGrandTotal(pizzaOrderTotal, pizzaToppingTotal) {
+    this.pizzaOrderTotal = pizzaOrderTotal;
+    this.pizzaToppingTotal = pizzaToppingTotal;
+}
+
+PizzaGrandTotal.prototype.totalPrice = function() {
+    return this.pizzaOrderTotal + this.pizzaToppingTotal;
+}

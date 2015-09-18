@@ -39,3 +39,31 @@ describe("PizzaTopping", function() {
         expect(testPizzaTopping1.toppingPrice() + testPizzaTopping2.toppingPrice()).to.equal(1.50);
     });
 });
+
+describe("PizzaTotalPrice", function() {
+    it("calculates the order with toppings", function() {
+    var testPizzaOrder = new PizzaOrder("large",1);
+    var testPizzaTopping = new PizzaTopping("pineapple");
+    expect(testPizzaOrder.quantityPrice() + testPizzaTopping.toppingPrice()).to.equal(20.50);
+    });
+
+    it("calculates multiple pizza orders and toppings", function() {
+        var testPizzaOrder = new PizzaOrder("large",1);
+        var testPizzaTopping1 = new PizzaTopping("pineapple");
+        var testPizzaTopping2 = new PizzaTopping("pepperoni");
+        expect(testPizzaOrder.quantityPrice() + testPizzaTopping1.toppingPrice() + testPizzaTopping2.toppingPrice()).to.equal(21.50);
+    });
+
+    it("calcualtes multiple pizza orders and toppings using totalPrice()", function() {
+        var testPizzaGrandTotal = new PizzaGrandTotal(20,1.50);
+        expect(testPizzaGrandTotal.totalPrice()).to.equal(21.50);
+    });
+    it("calcualtes multiple pizza orders and toppings using totalPrice()", function() {
+        var testPizzaOrder = new PizzaOrder("large",1);
+        var testPizzaTopping1 = new PizzaTopping("pineapple");
+        var testPizzaTopping2 = new PizzaTopping("pepperoni");
+        var testPizzaGrandTotal = new PizzaGrandTotal(20,1.50);
+        expect(testPizzaGrandTotal.totalPrice()).to.equal(21.50);
+    });
+
+});
