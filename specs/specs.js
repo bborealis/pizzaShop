@@ -27,13 +27,13 @@ describe("PizzaTopping", function() {
     });
 
     it("creates a new topping price", function() {
-        var testPizzaTopping = new PizzaTopping("pineapple");
+        var testPizzaTopping = new PizzaTopping("Pineapple");
         expect(testPizzaTopping.toppingPrice()).to.equal(0.50);
     });
 
     it("creates multiple toppings and calculates price", function() {
-        var testPizzaTopping1 = new PizzaTopping("pineapple");
-        var testPizzaTopping2 = new PizzaTopping("pepperoni");
+        var testPizzaTopping1 = new PizzaTopping("Pineapple");
+        var testPizzaTopping2 = new PizzaTopping("Pepperoni");
         expect(testPizzaTopping1.toppingPrice()).to.equal(0.50);
         expect(testPizzaTopping2.toppingPrice()).to.equal(1);
         expect(testPizzaTopping1.toppingPrice() + testPizzaTopping2.toppingPrice()).to.equal(1.50);
@@ -43,14 +43,14 @@ describe("PizzaTopping", function() {
 describe("PizzaTotalPrice", function() {
     it("calculates the order with toppings", function() {
     var testPizzaOrder = new PizzaOrder("large",1);
-    var testPizzaTopping = new PizzaTopping("pineapple");
+    var testPizzaTopping = new PizzaTopping("Pineapple");
     expect(testPizzaOrder.quantityPrice() + testPizzaTopping.toppingPrice()).to.equal(20.50);
     });
 
     it("calculates multiple pizza orders and toppings", function() {
         var testPizzaOrder = new PizzaOrder("large",1);
-        var testPizzaTopping1 = new PizzaTopping("pineapple");
-        var testPizzaTopping2 = new PizzaTopping("pepperoni");
+        var testPizzaTopping1 = new PizzaTopping("Pineapple");
+        var testPizzaTopping2 = new PizzaTopping("Pepperoni");
         expect(testPizzaOrder.quantityPrice() + testPizzaTopping1.toppingPrice() + testPizzaTopping2.toppingPrice()).to.equal(21.50);
     });
 
