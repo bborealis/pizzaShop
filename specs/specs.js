@@ -1,6 +1,7 @@
-describe('romanNumeral', function() {
-    it("enter a number and recieve a roman numeral", function() {
-        expect(romanNumeral(1)).to.be.eql("I");
+describe('PizzaOrder', function() {
+    it("creates a new order size", function() {
+        var testPizzaOrder = new PizzaOrder("large","1")
+        expect(testPizzaOrder.pizzaSize).to.equal("large");
     });
 
 });

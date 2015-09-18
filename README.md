@@ -1,23 +1,25 @@
-# _"Title"_
+# Pizza Shop
 
-##### _"Brief Description" 0/00/2015_
+##### _Pizza Shop app where users can order custom pizzas 9/18/2015_
 
 #### By Brian Borealis
 
 ## Description
 
-_"Insert Long Description Here"_
+A Pizza Shop app where users can order pizzas with custom  toppings.
+
+Users can specify the size and quantity of pizzas and see the total cost.
 
 ## Setup
 
-_Clone and open index.html in your browser._  
+_Clone and open index.html in your browser._
+
+_To run tests open spec-runner.html in your browser._
 
 ## Technologies Used
 
-_This project makes use of:
-[Mocha](https://mochajs.org/) and
-[Chai](http://chaijs.com/) as testing-frameworks.
-And has a dependency for jQuery._
+_This project makes use of
+[Mocha](https://mochajs.org/) and [Chai](http://chaijs.com/) as testing-frameworks and has a dependency for jQuery._
 
 
 ### Legal
