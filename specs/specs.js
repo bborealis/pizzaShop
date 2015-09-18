@@ -31,5 +31,11 @@ describe("PizzaTopping", function() {
         expect(testPizzaTopping.toppingPrice()).to.equal(0.50);
     });
 
-//    it("creates multiple toppings and calculates price")
+    it("creates multiple toppings and calculates price", function() {
+        var testPizzaTopping1 = new PizzaTopping("pineapple");
+        var testPizzaTopping2 = new PizzaTopping("pepperoni");
+        expect(testPizzaTopping1.toppingPrice()).to.equal(0.50);
+        expect(testPizzaTopping2.toppingPrice()).to.equal(1);
+        expect(testPizzaTopping1.toppingPrice() + testPizzaTopping2.toppingPrice()).to.equal(1.50);
+    });
 });

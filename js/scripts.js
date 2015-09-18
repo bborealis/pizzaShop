@@ -31,16 +31,27 @@ PizzaTopping.prototype.toppingPrice = function() {
 
     var vegetableToppings = ["pineapple", "mushroom", "onion", "olive", "tomato"];
     var meatToppings = ["pepperoni", "sausage", "bbq chicken"];
+    var toppingsPrice;
+    var toppingsTotalPrice = [];
 
     for (var i = 0; i < vegetableToppings.length; i++) {
         if (this.toppingType === vegetableToppings[i]) {
-            return 0.50;
+            toppingsPrice = 0.50;
+            toppingsTotalPrice.push(toppingsPrice);
         }
     }
     for (var i = 0; i < meatToppings.length; i++) {
-        if (this.toppingType === vegetableToppings[i]) {
-            return 1;
+        if (this.toppingType === meatToppings[i]) {
+            toppingsPrice = 1;
+            toppingsTotalPrice.push(toppingsPrice);
         }
     }
-
+    for ( var i = 0; i< toppingsTotalPrice.length; i++) {
+        var total =+ toppingsTotalPrice[i];
+        return total;
+    }
 }
+
+// PizzaTopping.prototype.totalToppingPrice = function() {
+//
+// }
