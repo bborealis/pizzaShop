@@ -3,6 +3,7 @@ function PizzaOrder(pizzaSize, pizzaQuantity) {
     this.pizzaQuantity = pizzaQuantity;
 }
 
-function PizzaTopping(toppingType) {
+function PizzaTopping(toppingType, toppingPrice) {
     this.toppingType = toppingType;
+    this.toppingPrice = toppingPrice;
 }
