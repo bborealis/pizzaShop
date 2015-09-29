@@ -1,17 +1,15 @@
 ////////////////////////PizzaOrder Constructor\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-function PizzaOrder(pizzaSize, pizzaQuantity) {
+function PizzaOrder(pizzaSize, pizzaQuantity, pizzaGrandTotal) {
     this.pizzaSize = pizzaSize;
     this.pizzaQuantity = pizzaQuantity;
+    this.pizzaGrandTotal = pizzaGrandTotal;
 }
 /////////////////////////PizzaOrder prototype\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 PizzaOrder.prototype.sizePrice = function() {
-    var smallPizza = "small";
-    var mediumPizza = "medium";
-    var largePizza = "large";
 
-    if (this.pizzaSize === smallPizza) {
+    if (this.pizzaSize === "small") {
         return 10;
-    } else if (this.pizzaSize === mediumPizza) {
+    } else if (this.pizzaSize === "medium") {
         return 15;
     } else {
         return 20;
@@ -19,7 +17,7 @@ PizzaOrder.prototype.sizePrice = function() {
 }
 
 PizzaOrder.prototype.quantityPrice = function() {
-    var total = this.pizzaQuantity * this.sizePrice(this.pizzaSize)
+    var total = this.pizzaQuantity * this.sizePrice()
     return total;
 }
 
@@ -32,6 +30,8 @@ PizzaOrder.prototype.pizzaOrderDescription = function() {
             return newOrderMult;
         }
     }
+
+
     ////////////////PizzaTopping Constructor\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 function PizzaTopping(toppingType) {
     this.toppingType = toppingType;
@@ -96,7 +96,7 @@ PizzaGrandTotal.prototype.totalPrice = function() {
 PizzaGrandTotal.prototype.totalDescription = function() {
         var newGrandTotal = ("Your total is: $" + this.totalPrice());
         return newGrandTotal;
-    }
+     }
     //////////////begin jQuery\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 $(document).ready(function() {
 
@@ -149,7 +149,7 @@ $(document).ready(function() {
 
         var calculatedPizzaOrderTotal = newPizzaOrder.quantityPrice(inputtedPizzaSize);
         console.log("base price of pizza: " + calculatedPizzaOrderTotal);
-        var calculatedPizzaToppingTotal = newPizzaTopping.toppingPrice(inputtedPizzaTopping);
+        var calculatedPizzaToppingTotal = newPizzaTopping.toppingPrice(inputtedPizzaTopping) * inputtedPizzaQuantity;
         console.log("pizza topping: " + pizzaToppingArray[toppingSelection]);
         console.log("total price of toppings: " + calculatedPizzaToppingTotal);
         var newPizzaGrandTotal = new PizzaGrandTotal(calculatedPizzaOrderTotal, calculatedPizzaToppingTotal);
